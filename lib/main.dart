@@ -10,37 +10,85 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal.shade800,
         body: SafeArea(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                width: 100,
-                color: Colors.red,
-                margin: EdgeInsets.only(bottom: 20.0),
+              Center(
+                child: CircleAvatar(
+                  radius: 50.0,
+                  backgroundColor: Colors.grey,
+                  backgroundImage: AssetImage('images/me.png'),
+                ),
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.yellow,
+              Text(
+                'Nicolas Broders',
+                style: TextStyle(
+                  fontFamily: 'Pacifico',
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Mobile Developper',
+                style: TextStyle(
+                    fontFamily: 'Source Sans Pro',
+                    fontSize: 15.0,
+                    color: Colors.teal.shade100,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 2.0),
+              ),
+              SizedBox(
+                height: 20.0,
+                width: 150.0,
+                child: Divider(
+                  color: Colors.teal.shade100,
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.phone,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      '+33 6 45 26 20 08',
+                      style: TextStyle(
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 15.0,
+                          color: Colors.teal.shade900,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 2.0),
+                    ),
                   ),
-                  Container(
-                    width: 100,
-                    height: 100,
-                    color: Colors.green,
+                ),
+              ),
+              Card(
+                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: ListTile(
+                    leading: Icon(
+                      Icons.mail,
+                      color: Colors.teal,
+                    ),
+                    title: Text(
+                      'contact@nicolas-borders.info',
+                      style: TextStyle(
+                          fontFamily: 'Source Sans Pro',
+                          fontSize: 15.0,
+                          color: Colors.teal.shade900,
+                          fontWeight: FontWeight.bold,
+                          letterSpacing: 0.7),
+                    ),
                   ),
-                ],
-              ),
-              Container(
-                width: 100,
-                margin: EdgeInsets.only(bottom: 20.0),
-                color: Colors.blue,
-              ),
+                ),
+              )
             ],
           ),
         ),
